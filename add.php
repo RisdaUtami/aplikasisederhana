@@ -14,12 +14,16 @@
                 <td><input type="text" name="name"></td>
             </tr>
             <tr> 
-                <td>Email</td>
-                <td><input type="text" name="email"></td>
+                <td>Kelas</td>
+                <td><input type="text" name="kelas"></td>
             </tr>
             <tr> 
-                <td>Mobile</td>
-                <td><input type="text" name="mobile"></td>
+                <td>Nomor Kontak</td>
+                <td><input type="text" name="kontak"></td>
+            </tr>
+            <tr> 
+                <td>Alamat</td>
+                <td><input type="text" name="alamat"></td>
             </tr>
             <tr> 
                 <td></td>
@@ -33,14 +37,15 @@
     // Check If form submitted, insert form data into users table.
     if(isset($_POST['Submit'])) {
         $name = $_POST['name'];
-        $email = $_POST['email'];
-        $mobile = $_POST['mobile'];
+        $kelas = $_POST['kelas'];
+        $kontak = $_POST['kontak'];
+        $alamat = $_POST['alamat'];
         
         // include database connection file
         include_once("config.php");
                 
         // Insert user data into table
-        $result = mysqli_query($mysqli, "INSERT INTO users(name,email,mobile) VALUES('$name','$email','$mobile')");
+        $result = mysqli_query($mysqli, "INSERT INTO users(name,kelas,kontak,alamat) VALUES('$name','$kelas','$kontak','$alamat')");
         
         // Show message when user added
         echo "User added successfully. <a href='index.php'>View Users</a>";
